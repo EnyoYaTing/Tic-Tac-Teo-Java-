@@ -1,0 +1,14 @@
+Code Quality Feedback for 70988:
+
+Some of your method names are potentially problematic in that they don't conform
+to recommendations (they aren't verbs, checks or event handlers), are just
+single words and start with an uppercase letter. Your variable names are also
+generally quite short and as a result it is sometimes difficult to infer their
+purpose. The "Display" class has very deep nesting, which could make it
+difficult to maintain in the long term. Be aware that there are some tightly
+coupled pairs of classes (Oxo<->Player and Board<->Player) which may benefit
+from refactoring to improve encapsulation and separation. Your code might
+benefit from some additional descriptive comments. There are declared but unused
+private fields in a some of your classes (Ai->rand, Board->currentPlayerMark,
+Display->board and Oxo->computer). Significant amounts of code has been
+replicated in Board. Avoid copy-and-paste duplication: keep your code DRY !
